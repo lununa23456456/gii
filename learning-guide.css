@@ -1,0 +1,108 @@
+:root {
+    --bg-1: #f4f7ff;
+    --bg-2: #e9efff;
+    --panel: rgba(255, 255, 255, 0.88);
+    --panel-strong: rgba(255, 255, 255, 0.96);
+    --primary: #2f5bbd;
+    --primary-dark: #23489e;
+    --accent: #6e8efb;
+    --text: #1d2433;
+    --muted: #5f6f89;
+    --line: rgba(98, 125, 180, 0.18);
+    --shadow: 0 18px 45px rgba(29, 36, 51, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+    color: var(--text);
+}
+
+.page-shell { max-width: 1160px; margin: 0 auto; padding: 30px 18px 60px; }
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(47, 91, 189, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.brand { color: var(--primary-dark); font-size: 1.35rem; font-weight: 700; white-space: nowrap; }
+.nav-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.nav-links a { padding: 10px 12px; border-radius: 10px; color: var(--text); font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: 0.2s ease; }
+.nav-links a:hover, .nav-links a.active { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; }
+
+.guide-container { margin-top: 28px; }
+.hero { padding: 40px 32px; background: rgba(255, 255, 255, 0.72); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+.eyebrow { margin: 0 0 10px; color: var(--primary); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.hero h1 { max-width: 700px; margin: 0; color: var(--primary-dark); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; letter-spacing: -0.04em; }
+.subtitle { max-width: 780px; margin: 14px 0 0; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+.hero-action { display: inline-flex; gap: 12px; align-items: center; margin-top: 24px; padding: 12px 16px; border-radius: 12px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px rgba(47, 91, 189, 0.18); }
+.hero-action span { font-size: 1.15rem; }
+
+.levels-section, .study-cycle, .subject-guide { margin-top: 34px; }
+.section-heading { margin-bottom: 20px; }
+.section-heading.compact { margin-bottom: 16px; }
+.section-heading h2 { margin: 0; color: var(--primary-dark); font-size: clamp(1.55rem, 3vw, 2.1rem); }
+.section-heading > p:last-child { max-width: 720px; margin: 10px 0 0; color: var(--muted); line-height: 1.6; }
+
+.level-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.level-card { padding: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 10px 24px rgba(47, 91, 189, 0.06); border-top: 4px solid var(--primary); }
+.level-card.moderate { border-top-color: #5d79dd; }
+.level-card.advanced { border-top-color: #23489e; }
+.level-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.level-badge { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 12px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; font-size: 0.8rem; font-weight: 800; }
+.level-label { color: var(--primary); font-size: 0.78rem; font-weight: 700; }
+.level-card h3 { margin: 20px 0 8px; color: var(--primary-dark); font-size: 1.55rem; }
+.level-intro { min-height: 48px; margin: 0; color: var(--muted); line-height: 1.55; }
+.level-card h4 { margin: 22px 0 8px; color: var(--text); }
+.level-card ul { min-height: 132px; margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.7; }
+.move-on { margin-top: 20px; padding: 13px; border-radius: 12px; background: rgba(110, 142, 251, 0.1); color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+.move-on strong { color: var(--primary-dark); }
+
+.cycle-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.cycle-grid article { padding: 20px; background: var(--panel-strong); border: 1px solid var(--line); border-radius: 16px; }
+.cycle-grid span { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 800; }
+.cycle-grid h3 { margin: 14px 0 7px; color: var(--primary-dark); }
+.cycle-grid p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+
+.subject-table { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+.table-row { display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 15px 20px; border-top: 1px solid var(--line); color: var(--muted); line-height: 1.55; }
+.table-row:first-child { border-top: 0; }
+.table-row strong { color: var(--primary-dark); }
+.table-header { background: rgba(110, 142, 251, 0.1); color: var(--primary-dark); font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+
+.advice-box { margin-top: 30px; padding: 28px 24px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(135deg, rgba(47, 91, 189, 0.06), rgba(110, 142, 251, 0.08)); }
+.advice-box h2 { margin: 0 0 10px; color: var(--primary-dark); }
+.advice-box p { max-width: 780px; margin: 0; color: var(--muted); line-height: 1.7; }
+
+@media (max-width: 900px) {
+    .topbar { align-items: flex-start; flex-direction: column; }
+    .nav-links { justify-content: flex-start; }
+    .level-grid { grid-template-columns: 1fr; }
+    .level-card ul, .level-intro { min-height: auto; }
+}
+
+@media (max-width: 640px) {
+    .hero { padding: 28px 20px; }
+    .cycle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .table-row { grid-template-columns: 1fr; gap: 5px; }
+}
+
+@media (max-width: 420px) {
+    .nav-links { width: 100%; }
+    .nav-links a { flex: 1 1 calc(50% - 8px); text-align: center; }
+    .cycle-grid { grid-template-columns: 1fr; }
+}
